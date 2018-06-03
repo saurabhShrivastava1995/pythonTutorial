@@ -1,9 +1,11 @@
-# Define a Movie class that has two properties: name and director
+# We've already defined a movie class like this:
 class Movie:
-    def __init__(self,name,director):
-        self.name = name
-        self.director = director
+    def __init__(self, new_name, new_director):
+        self.name = new_name
+        self.director = new_director
 
+    def print_info(self):
+        print(f"<< {self.name} >> by {self.director}")
+        # let's try to add a method `print_info()` here:
 
-# You should be able to create Movie objects like this one:
-my_movie = Movie('The Matrix', 'Wachowski')
+# You only need to finish the method, we will take care of the object creation and call your method for you!
