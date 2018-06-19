@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f41a21-037e-4ce1-960f-06ce159f844a" name="Default" comment="Started milestone project">
-      <change beforePath="$PROJECT_DIR$/mgicFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/try-except-finally" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileProject/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fileProject/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,11 +42,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="try-except-finally" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/try-except-finally">
+      <file leaf-file-name="try-except-finally.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/try-except-finally.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fileProject/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="15" selection-start-column="15" selection-end-column="15" />
+            <state relative-caret-position="120">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fileProject/data.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -82,6 +98,8 @@
         <option value="$PROJECT_DIR$/magicFunctions.py" />
         <option value="$PROJECT_DIR$/script.py" />
         <option value="$PROJECT_DIR$/try-except-finally" />
+        <option value="$PROJECT_DIR$/fileProject/data.txt" />
+        <option value="$PROJECT_DIR$/fileProject/app.py" />
       </list>
     </option>
   </component>
@@ -102,6 +120,11 @@
             <path>
               <item name="pythonTutorial" type="b2602c69:ProjectViewProjectNode" />
               <item name="pythonTutorial" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pythonTutorial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pythonTutorial" type="462c0819:PsiDirectoryNode" />
+              <item name="fileProject" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -419,6 +442,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/try-except-finally">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/magicFunctions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -426,10 +456,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/try-except-finally">
+    <entry file="file://$PROJECT_DIR$/try-except-finally.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fileProject/data.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fileProject/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
