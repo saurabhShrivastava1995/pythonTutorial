@@ -23,11 +23,11 @@ while res != '5':
         lib.delete_a_book(inp)
 
     elif res == '3':
-        inp = raw_input('Enter the book name you want to find : ')
+        inp = input('Enter the book name you want to find : ')
         lib.find_a_book(inp)
 
     elif res == '4':
-        inp = raw_input('Enter the book name you want to mark as Read : ')
+        inp = input('Enter the book name you want to mark as Read : ')
         lib.mark_book_as_read(inp)
 
     else:
