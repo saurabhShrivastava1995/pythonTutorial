@@ -16,7 +16,7 @@ res = input(USER_CHOICE)
 while res != '5':
     if res == '1':
         inp = (input("Enter the book name, it's author and the read status respectively : ")).split()
-        lib.add_new_book(inp[0],inp[1],bool(inp[2]))
+        lib.add_new_book(inp[0], inp[1], bool(inp[2]))
 
     elif res == '2':
         inp = input('Enter the book name you want to delete : ')
@@ -32,7 +32,6 @@ while res != '5':
 
     else:
         print("Exiting...")
-        break;
+        break
 
-    res = input(USER_CHOICE)
-
+res = input(USER_CHOICE)
