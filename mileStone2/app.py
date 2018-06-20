@@ -33,5 +33,4 @@ while res != '5':
     else:
         print("Exiting...")
         break
-
-res = input(USER_CHOICE)
+    res = input(USER_CHOICE)

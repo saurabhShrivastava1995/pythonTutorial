@@ -1,0 +1,3 @@
+Kumaon,Corbett,True
+Zulfi,Bob,True
+Yanky,Rob,True
