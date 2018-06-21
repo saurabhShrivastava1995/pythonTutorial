@@ -1,3 +1,2 @@
-Kumaon,Corbett,True
-Zulfi,Bob,True
-Yanky,Rob,True
+Western,James,True
+John,Row,True
