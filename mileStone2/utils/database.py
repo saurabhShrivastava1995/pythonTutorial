@@ -27,6 +27,7 @@ class Library:
     def find_a_book(self, book_name):
         with open(self.books, 'r') as file:
             books_list = [line.strip().split(',') for line in file.readlines()]
+            print(books_list)
             for book in books_list:
                 if book[0] == book_name:
                     print(book)
@@ -35,15 +36,16 @@ class Library:
                 print("Oops!! No books found with the given name in the library")
 
     def mark_book_as_read(self, book_name):
+        self.books_list = []
         with open(self.books, 'r') as file:
-            books_list = [line.strip().split(',') for line in file.readlines()]
-        for book in books_list:
-            if book[0] == book_name:
-                self.delete_a_book(book[0])
-                self.add_new_book(book[0], book[1], 'True')
-                break
+            self.books_list = [line.strip().split(',') for line in file.readlines()]
+
+        for x in range(len(self.books_list)):
+            if self.books_list[x][0] == book_name:
+                self.books_list[x][2] ='True'
         else:
             print("Oops!! No books found with the given name in the library")
 
-
-
+        with open(self.books,'w') as file:
+            for book in self.books_list:
+                file.write(f'{book[0]},{book[1]},{book[2]}\n')
