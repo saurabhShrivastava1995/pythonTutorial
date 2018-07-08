@@ -3,6 +3,8 @@ from utils.database import Library
 
 lib = Library()
 
+lib.create_book_table()
+
 USER_CHOICE = """
 Enter your choice:
 1. Add a new book

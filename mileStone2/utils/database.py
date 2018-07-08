@@ -1,51 +1,51 @@
 
+import sqlite3
 class Library:
+
+    def create_book_table(self):
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
+        cursor.execute('CREATE TABLE IF NOT EXISTS books(name text primary key, author text,read integer)')
+        connection.commit()
+        connection.close()
 
     def __init__(self):
         self.books = 'books.txt'
         self.book_list = []
 
-    def add_new_book(self, book_name,book_author,read_flag,mode='a'):
-        with open(self.books,mode) as file:
-            file.write(f'{book_name},{book_author},{read_flag}\n')
+    def add_new_book(self, book_name,book_author,read_flag):
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
+        if read_flag == 'True':
+            cursor.execute('INSERT INTO books VALUES(?,?,0)',(book_name,book_author))
+        else:
+            cursor.execute('INSERT INTO books VALUES(?,?,1)',(book_name,book_author))
+        
+        connection.commit()
+        connection.close()
+
 
     def delete_a_book(self, book_name):
-        with open(self.books, 'r+') as file:
-            self.books_list = [line.strip().split(",") for line in file.readlines()]
-            self.books_list = [book for book in self.books_list if book[0] != book_name]
-
-        count = 0
-        for book in self.books_list:
-            if count == 0:
-                mode = 'w'
-            else:
-                mode = 'a'
-            self.add_new_book(book[0], book[1], book[2],mode)
-            count += 1
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
+        cursor.execute('DELETE FROM books WHERE name=?',(book_name,))
+        connection.commit()
+        connection.close()
 
 
     def find_a_book(self, book_name):
-        with open(self.books, 'r') as file:
-            books_list = [line.strip().split(',') for line in file.readlines()]
-            print(books_list)
-            for book in books_list:
-                if book[0] == book_name:
-                    print(book)
-                    break
-            else:
-                print("Oops!! No books found with the given name in the library")
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
+        cursor.execute('SELECT * FROM books WHERE name=?',(book_name,))
+        print(cursor.fetchall())
+        connection.close()
+
+        
 
     def mark_book_as_read(self, book_name):
-        self.books_list = []
-        with open(self.books, 'r') as file:
-            self.books_list = [line.strip().split(',') for line in file.readlines()]
-
-        for x in range(len(self.books_list)):
-            if self.books_list[x][0] == book_name:
-                self.books_list[x][2] ='True'
-        else:
-            print("Oops!! No books found with the given name in the library")
-
-        with open(self.books,'w') as file:
-            for book in self.books_list:
-                file.write(f'{book[0]},{book[1]},{book[2]}\n')
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
+        cursor.execute('UPDATE books SET read=0 WHERE name=?',(book_name,))
+        connection.commit()
+        connection.close()
+        
