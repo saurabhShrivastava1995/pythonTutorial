@@ -1,3 +1,4 @@
+import re
 from bs4 import BeautifulSoup
 
 ITEM_HTML = '''<html><head></head><body>
@@ -35,4 +36,21 @@ def find_item_name():
 	html_link = soup.select_one(locator)
 	print(html_link.attrs.get('title'))
 
+def find_item_price():
+	soup = BeautifulSoup(ITEM_HTML,'html.parser')
+	locator = 'article.product_pod div.product_price p'
+	item_price = soup.select_one(locator).string
+	pattern = '£([0-9]+\.[0-9]+)'
+	mathcer = re.match(pattern, item_price)
+	print(float(mathcer.group(1)))
+
+def find_item_rating():
+	soup = BeautifulSoup(ITEM_HTML, 'html.parser')
+	locator = 'article.product_pod p'
+	item_rating = soup.select_one(locator)
+	arr = [x for x in item_rating.attrs['class'] if x != 'star-rating']
+	print(arr[0])
+
 find_item_name()
+find_item_price()
+find_item_rating()
