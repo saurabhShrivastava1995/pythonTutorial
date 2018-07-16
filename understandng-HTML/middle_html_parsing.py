@@ -29,28 +29,42 @@ ITEM_HTML = '''<html><head></head><body>
 </li>
 </body></html>
 '''
-class parsedItem():
-    
+
+class ParsedItemLocator():
+    NAME_LOCATOR = 'article.product_pod h3 a'
+    LINK_LOCATOR = 'article.product_pod h3 a'
+    PRICE_LOCATOR = 'article.product_pod div.product_price p'
+    RATING_LOCATOR = 'article.product_pod p'
+class ParsedItem():
+
     def __init__(self, parse_item):
         self.soup = BeautifulSoup(parse_item,'html.parser');
 
     def name(self):
-    	locator = 'article.product_pod h3 a'
+    	locator = ParsedItemLocator.NAME_LOCATOR
     	html_link = self.soup.select_one(locator)
     	return (html_link.attrs.get('title'))
 
+    def link(self):
+        locator = ParsedItemLocator.LINK_LOCATOR
+        html_link = self.soup.select_one(locator)
+        return (html_link.attrs.get('href'))
+
     def price(self):
-    	locator = 'article.product_pod div.product_price p'
+    	locator = ParsedItemLocator.PRICE_LOCATOR
     	item_price = self.soup.select_one(locator).string
     	pattern = '£([0-9]+\.[0-9]+)'
     	mathcer = re.match(pattern, item_price)
     	return (float(mathcer.group(1)))
 
-    def rating():
-    	locator = 'article.product_pod p'
+    def rating(self):
+    	locator = ParsedItemLocator.RATING_LOCATOR
     	item_rating = self.soup.select_one(locator)
     	arr = [x for x in item_rating.attrs['class'] if x != 'star-rating']
     	return (arr[0])
 
-item = parsedItem(ITEM_HTML)
+item = ParsedItem(ITEM_HTML)
 print(item.name())
+print(item.link())
+print(item.price())
+print(item.rating())
