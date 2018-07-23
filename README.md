@@ -1,1 +1,1 @@
-This repo has the simple code to practice and learn Python 3
+This repo has example codes to practice and learn Python 3
