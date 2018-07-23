@@ -6,9 +6,13 @@ from threading import Thread
 counter = 0
 
 def update_counter():
+	time.sleep(random.random())
 	global counter
+	time.sleep(random.random())
 	counter += 1
+	time.sleep(random.random())
 	print(f"The value of counter is {counter}")
+
 
 arr = [Thread(target=update_counter)for x in range(10)]
 
